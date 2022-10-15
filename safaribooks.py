@@ -447,9 +447,6 @@ class SafariBooks:
         sep = cred.index(":")
         new_cred = ["", ""]
         new_cred[0] = cred[:sep].strip("'").strip('"')
-        if "@" not in new_cred[0]:
-            return False
-
         new_cred[1] = cred[sep + 1:]
         return new_cred
 
