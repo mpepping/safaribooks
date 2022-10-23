@@ -230,7 +230,8 @@ class SafariBooks:
 
     API_TEMPLATE = SAFARI_BASE_URL + "/api/v1/book/{0}/"
 
-    BASE_01_HTML = "<!DOCTYPE html>\n" \
+    BASE_01_HTML = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" \
+                   "<!DOCTYPE html>\n" \
                    "<html lang=\"en\" xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"" \
                    " xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"" \
                    " xsi:schemaLocation=\"http://www.w3.org/2002/06/xhtml2/" \
@@ -251,7 +252,7 @@ class SafariBooks:
                    "</head>\n" \
                    "<body>{1}</body>\n</html>"
 
-    CONTAINER_XML = "<?xml version=\"1.0\"?>" \
+    CONTAINER_XML = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" \
                     "<container version=\"1.0\" xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\">" \
                     "<rootfiles>" \
                     "<rootfile full-path=\"OEBPS/content.opf\" media-type=\"application/oebps-package+xml\" />" \
@@ -1038,7 +1039,7 @@ class SafariBooks:
         )
 
     def create_epub(self):
-        open(os.path.join(self.BOOK_PATH, "mimetype"), "w").write("application/epub+zip")
+        open(os.path.join(self.BOOK_PATH, "mimetype"), "w", encoding="utf-8").write("application/epub+zip")
         meta_info = os.path.join(self.BOOK_PATH, "META-INF")
         if os.path.isdir(meta_info):
             self.display.log("META-INF directory already exists: %s" % meta_info)
