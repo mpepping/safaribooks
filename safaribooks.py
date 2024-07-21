@@ -29,7 +29,7 @@ API_ORIGIN_HOST = "api." + ORLY_BASE_HOST
 ORLY_BASE_URL = "https://www." + ORLY_BASE_HOST
 SAFARI_BASE_URL = "https://" + SAFARI_BASE_HOST
 API_ORIGIN_URL = "https://" + API_ORIGIN_HOST
-PROFILE_URL = "https://learning.oreilly.com/home/?next=%2Fprofile%2F"
+PROFILE_URL = "https://learning.oreilly.com/profile/"
 
 # DEBUG
 USE_PROXY = False
